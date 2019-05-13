@@ -6,13 +6,15 @@ public class PortalTeleporterScript : MonoBehaviour {
 
     public Transform player;
     public Transform reciever;
-
+    public bool tron;
+    public GameObject tronObj;
     private bool isOverlapping;
 
     // Update is called once per frame
     void Update() {
         if (isOverlapping) {
-            Vector3 portalToPlayer = player.position - transform.position;
+            Vector3 portalToPlayer = (player.position - transform.position);
+            //portalToPlayer.y -= 2;
             float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
 
             if (dotProduct < 0) {
@@ -31,6 +33,14 @@ public class PortalTeleporterScript : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             isOverlapping = true;
+            if (tron) {
+                tronObj.GetComponent<MeshRenderer>().material.SetInt("_ZTest", 1);
+                player.GetChild(0).GetComponent<RenderEffectBloom>().BloomFactor = 0;
+            }
+            else {
+                tronObj.GetComponent<MeshRenderer>().material.SetInt("_ZTest", 0);
+                player.GetChild(0).GetComponent<RenderEffectBloom>().BloomFactor = 8;
+            }
         }
     }
 

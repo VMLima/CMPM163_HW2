@@ -5,6 +5,7 @@
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		[NoScaleOffset] _FlowMap ("Flow (RG, A noise)", 2D) = "black" {}
 		[NoScaleOffset] _DerivHeightMap ("Deriv (AG) Height (B)", 2D) = "black" {}
+        _RefractionAmount("Refraction Amount",  Range(0, 1)) = 0.75
 		_UJump ("U jump per phase", Range(-0.25, 0.25)) = 0.25
 		_VJump ("V jump per phase", Range(-0.25, 0.25)) = 0.25
 		_Tiling ("Tiling", Float) = 1
@@ -56,6 +57,7 @@
             }
 
             samplerCUBE _Cube;
+            float _RefractionAmount;
 
             fixed4 frag(v2f i) : SV_Target
             {
@@ -89,7 +91,7 @@
              float4 refractColor = float4(refractColorRed.r, refractColorGreen.g, refractColorBlue.b, 1.0);
 
 
-             return float4(lerp(reflectColor, refractColor, 1).rgb, .5);
+             return float4(lerp(reflectColor, refractColor, _RefractionAmount).rgb, .5);
 
 
             }
@@ -99,6 +101,7 @@
 
         Tags { "RenderType" = "Transparent" "Queue" = "Transparent" }
         LOD 200
+        Cull Off
 
         GrabPass { "_WaterBackground" }
 

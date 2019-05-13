@@ -1,10 +1,4 @@
-﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-
-Shader "Custom/Edge" {
+﻿Shader "Custom/Edge" {
     Properties {
         _EdgeColor ("Edge Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
@@ -15,7 +9,8 @@ Shader "Custom/Edge" {
 
 	
     SubShader {
-
+        
+        // Outline shader
         Pass {
             //ZTest Always
             Cull Front
@@ -58,7 +53,7 @@ Shader "Custom/Edge" {
 
         Pass {
             Tags {"RenderType" = "Qpaque" "Queue" = "Geometry+1"}
-            ZTest Greater
+            ZTest [_ZTest]//Greater
             ZWrite Off
             CGPROGRAM
 

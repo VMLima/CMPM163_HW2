@@ -75,7 +75,7 @@ Material:
     - _FlowOffset: 0
     - _FlowStrength: 0.05
     - _GlossMapScale: 1
-    - _Glossiness: 0.7
+    - _Glossiness: 0.70000005
     - _GlossyReflections: 1
     - _HeightScale: 1
     - _HeightScaleModulated: 0.34
@@ -83,6 +83,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _RefractionAmount: 0.75
     - _RefractionStrength: 0.25
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -92,7 +93,7 @@ Material:
     - _UJump: 0.24
     - _UVSec: 0
     - _VJump: 0.2
-    - _WaterFogDensity: 0.16
+    - _WaterFogDensity: 0.3
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0, g: 0.56204367, b: 1, a: 0.11372549}

@@ -38,4 +38,8 @@ public class TerrainController : MonoBehaviour {
         }
 
     }
+
+    void ApplyTexture() {
+
+    }
 }
