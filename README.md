@@ -1,5 +1,5 @@
 # CMPM 163 Homework 2
-This assignment showcases a tron-like shader that applies several different effects to a jetplane and a water shader that can reflect and refract its surroundings. Use WASD to mover and space to jump. Users can travel between the two parts through a portal set up in each scene. <sup>*</sup>
+This assignment showcases a tron-like shader that applies several different effects to a jetplane and a water shader that can reflect and refract its surroundings. <b>Use WASD to move, space to jump and escape to quit the build</b>. Users can travel between the two parts through a portal set up in each scene. <sup>*</sup>
 <br>
 <img src="https://github.com/VMLima/CMPM163_HW2/blob/master/Screenshots/PortalTron.PNG" width="30%" height="30%">
 <img src="https://github.com/VMLima/CMPM163_HW2/blob/master/Screenshots/PortalLandscape.PNG" width="30%" height="30%">
