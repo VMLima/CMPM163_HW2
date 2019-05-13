@@ -76,6 +76,10 @@ public class MovementController : MonoBehaviour {
             isGrounded = false;
         }
 
+        if (Input.GetKey(KeyCode.Escape)) {
+            Application.Quit();
+        }
+
         // Crouching 
         if (Input.GetKeyDown(KeyCode.LeftControl)) {
             cam.transform.localPosition = new Vector3(0, 0, 0);
